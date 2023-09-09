@@ -1,14 +1,22 @@
 @charset "UTF-8";
-
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;600;700&display=swap");
 /* ---- variables ---- */
-
+:root {
+  --thin-weight: 300;
+  --normal-weight: 600;
+  --bold-weight: 700;
+  --primary-color: hsl(207, 100%, 65%);
+  --wrong-color: hsl(0, 100%, 67%);
+}
 /* ---- rest ---- */
 html {
-  color-scheme: dark;
+  color-scheme: light;
   font-size: 1rem;
 }
 body {
   min-height: 100vh;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: var(--normal-weight);
 }
 *,
 *::before,
@@ -25,4 +33,69 @@ svg,
 video {
   display: block;
   width: 100%;
+}
+
+/* ---- layout ---- */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-container {
+  max-width: 30rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  gap: 2em;
+  border: 0.1rem solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inputs-parent {
+  display: flex;
+  gap: 1rem;
+}
+.input-container {
+  display: flex;
+  height: 5rem;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+[id$="Inp"] {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  height: 4rem;
+  font-size: 2rem;
+  outline: none;
+  border: 0.1rem solid var(--primary-color);
+}
+
+[class^="message"] {
+  color: var(--wrong-color);
+  font-weight: var(--thin-weight);
+  font-size: 1rem;
+}
+.btn {
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  color: white;
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
+}
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.result {
+  font-size: 4rem;
+}
+[class$="-result"] {
+  color: var(--primary-color);
+}
+.wrong-input {
+  border: 0.1rem solid var(--wrong-color);
+}
+.wrong-input::after {
+  content: "Must be valid";
 }

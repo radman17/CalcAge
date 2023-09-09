@@ -7,5 +7,28 @@
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <main class="inputs-parent">
+        <div class="input-container">
+          <input type="number" id="yearInp" placeholder="YYYY" />
+          <small class="message-0"></small>
+        </div>
+        <div class="input-container">
+          <input type="number" id="monthInp" placeholder="MM" />
+          <small class="message-1"></small>
+        </div>
+        <div class="input-container">
+          <input type="number" id="dayInp" placeholder="DD" />
+          <small class="message-2"></small>
+        </div>
+      </main>
+      <button type="button" class="btn calc-btn">Calculate</button>
+      <h1 class="result">
+        <span class="year-result">--</span>Years <br />
+        <span class="month-result">--</span>Months <br />
+        <span class="day-result">--</span>Days
+      </h1>
+    </div>
+  </body>
 </html>
